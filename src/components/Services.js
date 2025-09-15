@@ -17,9 +17,9 @@ const services = [
       "Focused on high-touch areas, our disinfection services help reduce the spread of germs, promoting a healthier workplace.",
   },
   {
-    title: "Eco-Friendly Cleaning",
+    title: "Conventional & Eco-Friendly Products",
     description:
-      "Using green cleaning products, we deliver a safe, environmentally-conscious service while maintaining the highest cleanliness standards.",
+      "We offer both conventional and eco-friendly cleaning products. Eco-friendly options are available when job requirements allow, maintaining high standards while reducing environmental impact. Consult with us for recommendations.",
   },
 ];
 

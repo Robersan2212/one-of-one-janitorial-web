@@ -24,18 +24,21 @@ export default function About() {
         ref={contentRef}
         className={`transition-all duration-700 ease-out transform ${visible ? 'scale-100 opacity-100' : 'scale-90 opacity-0'}`}
       >
-        <h2 className="text-[#f3f3e6] text-5xl md:text-6xl font-light mb-8 text-center">About</h2>
-        <p className="text-[#e6c49a] text-lg md:text-xl max-w-2xl text-center mb-10">
+        <h2 className="text-[#f3f3e6] text-5xl md:text-6xl font-light mb-8 text-center mx-auto">About</h2>
+        <p className="text-[#e6c49a] text-lg md:text-xl max-w-2xl text-center mx-auto">
           As our grandmother once said, "We might be poor, but we are not dirty people." While our grandmother's life lesson speaks for itself, it is the cornerstone of our services and beliefs to help your business succeed.
         </p>
-        {/* Video Placeholder */}
-        <div className="w-full flex justify-center">
-          <div className="relative w-full max-w-xl aspect-video bg-[#18302b] border-2 border-dashed border-[#e6c49a] rounded-xl flex items-center justify-center">
-            <svg className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="32" cy="32" r="32" fill="#e6c49a" fillOpacity="0.2" />
-              <polygon points="26,20 48,32 26,44" fill="#e6c49a" />
-            </svg>
-            <span className="sr-only">Video placeholder</span>
+        <div className="mt-10 w-full max-w-4xl mx-auto rounded-xl overflow-hidden border border-[#e6c49a]/40 shadow-lg">
+          <div className="w-full aspect-video bg-black">
+            <video
+              src="https://ppxnikhfnswnkntf.public.blob.vercel-storage.com/Marvin.mp4"
+              controls
+              playsInline
+              preload="metadata"
+              className="w-full h-full object-cover"
+            >
+              Sorry, your browser doesn't support embedded videos.
+            </video>
           </div>
         </div>
       </div>

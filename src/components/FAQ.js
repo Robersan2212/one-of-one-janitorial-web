@@ -4,12 +4,12 @@ const faqs = [
   {
     question: "How often should I schedule cleaning?",
     answer:
-      "The frequency of cleaning depends on your needs and lifestyle. For most homes, a weekly or bi-weekly cleaning is recommended to maintain a clean and healthy environment.",
+      "The frequency of cleaning depends on your needs and lifestyle. For most businesses, bi-weekly cleaning is recommended to maintain a clean and healthy environment.",
   },
   {
     question: "What cleaning products do you use?",
     answer:
-      "We use environmentally friendly and non-toxic cleaning products to ensure the safety of your family, pets, and the environment. Our products are highly effective and eco-conscious.",
+      "We offer both conventional and eco-friendly cleaning products. Eco-friendly options are available when job requirements allow, maintaining high standards while reducing environmental impact. Consult with us for product recommendations.",
   },
   {
     question: "Do I need to provide cleaning equipment?",

@@ -23,33 +23,13 @@ export default function Header() {
     <header className="w-full bg-[#1A2A25] border-b border-[#e6c49a] sticky top-0 z-20 flex flex-col sm:flex-row items-center justify-between px-4 sm:px-8 py-3">
       <div className="flex items-center w-full sm:w-auto justify-between">
         <span className="flex items-center max-w-[180px] sm:max-w-[320px] md:max-w-[400px] lg:max-w-[520px] w-full">
-          <svg
-            viewBox="0 0 520 120"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-label="ONENONE logo"
-            className="w-full h-auto"
-            preserveAspectRatio="xMinYMid meet"
-          >
-            {/* O */}
-            <circle cx="50" cy="60" r="40" stroke="#e6c49a" strokeWidth="4" fill="none" />
-            {/* N */}
-            <path d="M110 100 V20 L170 100 V20" stroke="#e6c49a" strokeWidth="4" strokeLinejoin="round" fill="none" />
-            {/* E (closed circle with a horizontal bar) */}
-            <g transform="translate(0,0)">
-              <circle cx="210" cy="60" r="40" stroke="#e6c49a" strokeWidth="4" fill="none" />
-              <line x1="170" y1="60" x2="250" y2="60" stroke="#e6c49a" strokeWidth="4" />
-            </g>
-            {/* O */}
-            <circle cx="290" cy="60" r="40" stroke="#e6c49a" strokeWidth="4" fill="none" />
-            {/* N */}
-            <path d="M350 100 V20 L410 100 V20" stroke="#e6c49a" strokeWidth="4" strokeLinejoin="round" fill="none" />
-            {/* Reversed E (flipped horizontally, moved closer to N) */}
-            <g transform="translate(925,0) scale(-1,1)">
-              <path d="M450 60 m 0 -40 a 40 40 0 1 1 0 80" stroke="#e6c49a" strokeWidth="4" fill="none" />
-              <line x1="450" y1="60" x2="490" y2="60" stroke="#e6c49a" strokeWidth="4" />
-            </g>
-          </svg>
+          <div className="flex items-center justify-center w-full h-14 md:h-19">
+            <img 
+              src="/components/assets/header/file(4).svg" 
+              alt="One of One Janitorial Services Logo" 
+              className="h-full w-auto object-contain" 
+            />
+          </div>
         </span>
         {/* Hamburger menu button for mobile */}
         <button

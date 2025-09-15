@@ -1,20 +1,12 @@
 'use client';
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import before1 from "../components/assets/before-after/before1.jpg";
-import after1 from "../components/assets/before-after/After1.jpg";
-import before2 from "../components/assets/before-after/before2.jpg";
-import after2 from "../components/assets/before-after/after2.jpg";
-import before3 from "../components/assets/before-after/before3.jpg";
-import after3 from "../components/assets/before-after/after3.jpg";
-import before4 from "../components/assets/before-after/before4.jpg";
-import after4 from "../components/assets/before-after/after4.jpg";
 
 const sets = [
-  { before: before1, after: after1, label: "Carpet cleaning" },
-  { before: before2, after: after2, label: "Tile & Grout" },
-  { before: before3, after: after3, label: "Upholstery" },
-  { before: before4, after: after4, label: "Office Floor" },
+  { before: "/before-after/before1-new.jpg", after: "/before-after/after1-new.jpg", label: "Carpet cleaning" },
+  { before: "/before-after/before2.jpg", after: "/before-after/after2.jpg", label: "Tile & Grout" },
+  { before: "/before-after/before3.jpg", after: "/before-after/after3.jpg", label: "Upholstery" },
+  { before: "/before-after/before4.jpg", after: "/before-after/after4.jpg", label: "Office Floor" },
 ];
 
 export default function BeforeAfter() {
@@ -55,11 +47,24 @@ export default function BeforeAfter() {
 
   const { before, after } = sets[index];
 
+  // Determine dimensions for current images
+  let beforeWidth = 2048, beforeHeight = 1536;
+  let afterWidth = 2048, afterHeight = 1536;
+  if (index === 0) {
+    // First set: both are 2048x1536
+    beforeWidth = 2048; beforeHeight = 1536;
+    afterWidth = 2048; afterHeight = 1536;
+  } else {
+    // All other sets: before is 1536x2048, after is 1536x2048
+    beforeWidth = 1536; beforeHeight = 2048;
+    afterWidth = 1536; afterHeight = 2048;
+  }
+
   return (
     <section className="w-full min-h-[65vh] flex flex-col py-10 px-4" style={{ backgroundColor: '#243833', background: '#243833' }}>
       <h2 className="text-[#f3f3e6] text-5xl md:text-6xl font-light mb-8 text-center">Before & After</h2>
       <div className="flex-grow flex flex-col justify-center items-center">
-        <div className="flex items-center justify-center w-full max-w-5xl mx-auto">
+        <div className="flex items-center justify-center w-full max-w-7xl mx-auto">
           {/* Left arrow */}
           <button
             aria-label="Previous"
@@ -71,14 +76,14 @@ export default function BeforeAfter() {
           {/* Images */}
           <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-20">
             <div className="flex flex-col items-center">
-              <div className={`w-full aspect-[16/12] rounded-xl overflow-hidden bg-[#222] transition-all duration-200 ${vanishing ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
-                <Image src={before} alt="Before cleaning" className="object-cover w-full h-full" sizes="(max-width: 767px) 100vw, 60vw" />
+              <div className={`w-full aspect-[3/4] rounded-xl overflow-hidden bg-[#222] transition-all duration-200 ${vanishing ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
+                <Image src={before} alt="Before cleaning" className="object-cover w-full h-full" sizes="(max-width: 767px) 100vw, 60vw" width={beforeWidth} height={beforeHeight} />
               </div>
               <div className="mt-2 text-[#f2f6a7] text-2xl font-bold">Before</div>
             </div>
             <div className="flex flex-col items-center">
-              <div className={`w-full aspect-[16/12] rounded-xl overflow-hidden bg-[#222] transition-all duration-200 ${vanishing ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
-                <Image src={after} alt="After cleaning" className="object-cover w-full h-full" sizes="(max-width: 767px) 100vw, 60vw" />
+              <div className={`w-full aspect-[3/4] rounded-xl overflow-hidden bg-[#222] transition-all duration-200 ${vanishing ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
+                <Image src={after} alt="After cleaning" className="object-cover w-full h-full" sizes="(max-width: 767px) 100vw, 60vw" width={afterWidth} height={afterHeight} />
               </div>
               <div className="mt-2 text-[#f2f6a7] text-2xl font-bold">After</div>
             </div>
